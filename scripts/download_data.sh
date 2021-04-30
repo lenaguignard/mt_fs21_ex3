@@ -20,24 +20,24 @@ done
 
 # download a different interesting data set!
 
-mkdir -p $data/trump
+mkdir -p $data/wikipedia
 
-mkdir -p $data/trump/raw
+mkdir -p $data/wikipedia/raw
 
-wget https://raw.githubusercontent.com/ryanmcdermott/trump-speeches/master/speeches.txt
-mv speeches.txt $data/trump/raw
+wget https://github.com/lenaguignard/mt_fs21_ex3/blob/main/wikipedia.txt
+mv wikipedia.txt $data/wikipedia/raw
 
 # preprocess slightly
 
-cat $data/trump/raw/speeches.txt | python $base/scripts/preprocess_raw.py > $data/trump/raw/speeches.cleaned.txt
+cat $data/wikipedia/raw/wikipedia.txt | python $base/scripts/preprocess_raw.py > $data/wikipedia/raw/wikipedia.cleaned.txt
 
 # tokenize, fix vocabulary upper bound
 
-cat $data/trump/raw/speeches.cleaned.txt | python $base/scripts/preprocess.py --vocab-size 5000 --tokenize --lang "en" > \
-    $data/trump/raw/speeches.preprocessed.txt
+cat $data/wikipedia/raw/wikipedia.cleaned.txt | python $base/scripts/preprocess.py --vocab-size 5000 --tokenize --lang "en" > \
+    $data/wikipedia/raw/wikipedia.preprocessed.txt
 
 # split into train, valid and test
 
-head -n 500 $data/trump/raw/speeches.preprocessed.txt > $data/trump/valid.txt
-head -n 1000 $data/trump/raw/speeches.preprocessed.txt | tail -n 500 > $data/trump/test.txt
-tail -n 3260 $data/trump/raw/speeches.preprocessed.txt > $data/trump/train.txt
+head -n 500 $data/wikipedia/raw/wikipedia.preprocessed.txt > $data/wikipedia/valid.txt
+head -n 1000 $data/wikipedia/raw/wikipedia.preprocessed.txt | tail -n 500 > $data/wikipedia/test.txt
+tail -n 3260 $data/wikipedia/raw/wikipedia.preprocessed.txt > $data/wikipedia/train.txt
