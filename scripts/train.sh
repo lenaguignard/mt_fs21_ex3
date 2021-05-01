@@ -18,7 +18,9 @@ SECONDS=0
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/wikipedia \
         --epochs 40 \
         --emsize 200 --nhid 200 --dropout 0.5 --tied \
+        --log-interval 100 \
         --save $models/model.pt
+        
 )
 
 echo "time taken:"
