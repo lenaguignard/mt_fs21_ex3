@@ -33,13 +33,13 @@ This will download and preprocess the wikipedia.txt file from this repo. source:
 
     ./scripts/download_data.sh
 
-Train a model:
-The dropout has to be changed manually in this script.
+Train a model: The script is adapted for the wikipedia data. 
+The different dropout settings have to be changed manually in this script.
 
     ./scripts/train.sh
 
 The training process can be interrupted at any time, and the best checkpoint will always be saved.
 
-Generate (sample) some text from a trained model with:
+Generate (sample) some text from a trained model with: The script is adapted for the wikipedia data. 300 words will be returned.
 
     ./scripts/generate.sh
