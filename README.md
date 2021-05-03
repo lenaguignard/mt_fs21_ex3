@@ -1,6 +1,7 @@
 # Pytorch RNN Language Models
 
 This repo shows how to train neural language models using [Pytorch example code](https://github.com/pytorch/examples/tree/master/word_language_model).
+I made some changes to the scripts to train my own model.
 
 # Requirements
 
@@ -14,8 +15,8 @@ This repo shows how to train neural language models using [Pytorch example code]
 
 Clone this repository in the desired place:
 
-    git clone https://github.com/lucasseiler/pytorch-rnn-lm
-    cd pytorch-rnn-lm
+    git clone https://github.com/lenaguignard/mt_fs21_ex3
+    cd mt_fs21_ex3
 
 Create a new virtualenv that uses Python 3. Please make sure to run this command outside of any virtual Python environment:
 
@@ -28,10 +29,12 @@ Download and install required software:
     ./scripts/install_packages.sh
 
 Download and preprocess data:
+This will download and preprocess the wikipedia.txt file from this repo. source: https://opus.nlpl.eu/Wikipedia.php
 
     ./scripts/download_data.sh
 
 Train a model:
+The dropout has to be changed manually in this script.
 
     ./scripts/train.sh
 
