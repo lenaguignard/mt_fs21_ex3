@@ -17,7 +17,7 @@ SECONDS=0
 (cd $tools/pytorch-examples/word_language_model &&
     CUDA_VISIBLE_DEVICES=$device OMP_NUM_THREADS=$num_threads python main.py --data $data/wikipedia \
         --epochs 40 \
-        --emsize 200 --nhid 200 --dropout 0.5 --tied \
+        --emsize 200 --nhid 200 --dropout 0.3 --tied \
         --log-interval 100 \
         --save $models/model.pt
         
